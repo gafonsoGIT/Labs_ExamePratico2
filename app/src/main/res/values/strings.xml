@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Labs_ExamePratico2</string>
+    <string name="button_save">Guardar</string>
+    <string name="add_person">Adicionar pessoa...</string>
+    <string name="hint_person">Pessoa...</string>
+    <string name="empty_not_saved">A pessoa não foi guardada, pois nada foi inserido.</string>
 </resources>
