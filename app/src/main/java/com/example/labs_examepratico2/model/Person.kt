@@ -9,5 +9,8 @@ class Person (
 
   @PrimaryKey
   @ColumnInfo(name = "name")
-  val name: String
+  val name: String,
+  val idade: Int,
+  val email: String,
+  val anoNascimento: Int
   )
