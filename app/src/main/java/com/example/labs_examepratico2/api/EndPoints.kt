@@ -5,11 +5,11 @@ import retrofit2.http.*
 
 interface EndPoints {
 
-  @GET("/users")
-  fun getUsers(): Call<List<User>>
+  @GET("/name")
+  fun getCountries(): Call<List<User>>
 
-  @GET("/users/{id}")
-  fun getUserById(@Path("id") id: Int): Call<User>
+  @GET("/name/{common}")
+  fun getCountryByName(@Path("common") common: String): Call<User>
 
   @FormUrlEncoded
   @POST("/posts")

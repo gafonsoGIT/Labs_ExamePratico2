@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
       val request = ServiceBuilder.buildService(EndPoints::class.java)
-      val call = request.getUsers()
+      val call = request.getCountries()
 
       call.enqueue(object : Callback<List<User>> {
         override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
@@ -39,12 +39,13 @@ class MainActivity : AppCompatActivity() {
 
     fun getSingle(view: View) {
       val request = ServiceBuilder.buildService(EndPoints::class.java)
-      val call = request.getUserById(7)
+      val call = request.getCountryByName("Portugal")
       call.enqueue(object : Callback<User> {
         override fun onResponse(call: Call<User>, response: Response<User>) {
           if (response.isSuccessful) {
             val c: User = response.body()!!
-            Toast.makeText(this@MainActivity, c.name, Toast.LENGTH_SHORT).show()
+            print("ok")
+            Toast.makeText(this@MainActivity, c.name.nativeName.por.common + " - " + c.currencies.EUR.symbol + " - " + c.capital, Toast.LENGTH_SHORT).show()
           }
         }
 
