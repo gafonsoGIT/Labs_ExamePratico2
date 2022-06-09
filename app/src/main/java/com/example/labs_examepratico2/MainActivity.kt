@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity() {
 
     fun getSingle(view: View) {
       val request = ServiceBuilder.buildService(EndPoints::class.java)
-      val call = request.getCountryByName("Portugal")
+      val call = request.getCountryByName("portugal")
       call.enqueue(object : Callback<User> {
         override fun onResponse(call: Call<User>, response: Response<User>) {
           if (response.isSuccessful) {
-            val c: User = response.body()!!
             print("ok")
+            val c: User = response.body()!!
             Toast.makeText(this@MainActivity, c.name.nativeName.por.common + " - " + c.currencies.EUR.symbol + " - " + c.capital, Toast.LENGTH_SHORT).show()
           }
         }

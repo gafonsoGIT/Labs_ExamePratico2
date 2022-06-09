@@ -8,8 +8,8 @@ interface EndPoints {
   @GET("/name")
   fun getCountries(): Call<List<User>>
 
-  @GET("/name/{common}")
-  fun getCountryByName(@Path("common") common: String): Call<User>
+  @GET("/name/{name}")
+  fun getCountryByName(@Path("name") name: String): Call<User>
 
   @FormUrlEncoded
   @POST("/posts")
