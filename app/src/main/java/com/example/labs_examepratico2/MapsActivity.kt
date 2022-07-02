@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.labs_examepratico2.api.EndPoints
 import com.example.labs_examepratico2.api.ServiceBuilder
@@ -63,17 +64,31 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
           super.onLocationResult(p0)
           lastLocation = p0.lastLocation
           var loc = LatLng(lastLocation.latitude, lastLocation.longitude)
-          mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15.0f))
+
+          val distance = calculateDistance(
+            lastLocation.latitude, lastLocation.longitude,
+            continenteLat, continenteLong)
+
+          if(distance < 5000){
+            Toast.makeText(applicationContext, distance.toString() + " metros", Toast.LENGTH_LONG).show()
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15.0f))
+            mMap.addMarker(MarkerOptions().position(loc).title("new Location"))
+          }else {
+            Toast.makeText(applicationContext, "Acima da distância referida", Toast.LENGTH_LONG).show()
+          }
           findViewById<TextView>(R.id.txtcoordenadas).setText("Lat: " + loc.latitude + " - Long: " + loc.longitude)
           Log.d("lab google maps", "new location received" + loc.latitude + " - " + loc.longitude)
 
           val address = getAddress(lastLocation.latitude, lastLocation.longitude)
           findViewById<TextView>(R.id.txtmorada).setText("Morada: " + address)
 
-          findViewById<TextView>(R.id.txtdistancia).setText("Distância: " + calculateDistance(
+          findViewById<TextView>(R.id.txtdistancia).setText("Distância(metros) : " + distance.toString())
+
+          /*findViewById<TextView>(R.id.txtdistancia).setText("Distância: " + calculateDistance(
             lastLocation.latitude, lastLocation.longitude,
             continenteLat, continenteLong).toString()
-          )
+          )*/
+
         }
       }
     }
