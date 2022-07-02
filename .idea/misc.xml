@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/activity_main.xml" value="0.20652173913043478" />
-        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/activity_new_person.xml" value="0.25" />
-        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/recyclerview_item.xml" value="0.25" />
+        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/activity_new_person.xml" value="0.11822916666666666" />
+        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/recyclerline.xml" value="0.25" />
+        <entry key="..\:/Users/gonca/AndroidStudioProjects/Labs_ExamePratico2/app/src/main/res/layout/recyclerview_item.xml" value="0.11822916666666666" />
       </map>
     </option>
   </component>

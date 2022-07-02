@@ -6,11 +6,13 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "person_table")
 class Person (
-
   @PrimaryKey
-  @ColumnInfo(name = "name")
-  val name: String,
-  val idade: Int,
+  @ColumnInfo(name = "nome")
+  val nome: String,
+  @ColumnInfo(name = "email")
   val email: String,
+  @ColumnInfo(name = "idade")
+  val idade: Int,
+  @ColumnInfo(name = "anoNascimento")
   val anoNascimento: Int
   )

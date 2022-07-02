@@ -19,7 +19,8 @@
     app:layout_constraintVertical_bias="1.0"
     tools:listitem="@layout/recyclerview_item" />
 
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+  <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/fab"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +28,30 @@
     android:layout_height="wrap_content"
     android:layout_margin="16dp"
     android:contentDescription="@string/add_person"
-    android:src="@drawable/ic_baseline_add_24"/>
+    android:src="@drawable/ic_baseline_add_24"/> -->
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="@id/recyclerview">
+
+    <Button
+      android:id="@+id/delete20plusbtn"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Apagar 20 + "
+      android:layout_weight="1"
+      android:layout_margin="3dp"/>
+
+    <Button
+      android:id="@+id/getNameStartBbtn"
+      android:onClick="ChangePersons"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Primeira letra B"
+      android:layout_weight="1"
+      android:layout_margin="3dp"/>
+
+  </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

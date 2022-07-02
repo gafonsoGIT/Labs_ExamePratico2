@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.labs_examepratico2.R
 import com.example.labs_examepratico2.model.Person
+import java.util.*
 
 class PersonListAdapter : ListAdapter<Person, PersonListAdapter.PersonViewHolder>(PersonsComparator()) {
 
@@ -18,14 +19,22 @@ class PersonListAdapter : ListAdapter<Person, PersonListAdapter.PersonViewHolder
 
   override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
     val current = getItem(position)
-    holder.bind(current.name)
+    holder.bind(current)
   }
 
   class PersonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val personItemView: TextView = itemView.findViewById(R.id.textView)
 
-    fun bind(text: String) {
-      personItemView.text = text
+    fun bind(current: Person) {
+      val currentYear = Calendar.getInstance().get(Calendar.YEAR)
+      val idadeAtual = currentYear - current.anoNascimento
+      var text = ""
+      if(current.idade < idadeAtual) {
+        text = "Ainda vai fazer anos"
+      } else {
+        text = "Já fez anos"
+      }
+      personItemView.text = current.nome + " (" + current.idade.toString() + ") " + text
     }
 
     companion object {
@@ -43,7 +52,7 @@ class PersonListAdapter : ListAdapter<Person, PersonListAdapter.PersonViewHolder
     }
 
     override fun areContentsTheSame(oldItem: Person, newItem: Person): Boolean {
-      return oldItem.name == newItem.name
+      return oldItem.nome == newItem.nome
     }
   }
 }

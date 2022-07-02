@@ -29,11 +29,26 @@ abstract class PersonRoomDatabase: RoomDatabase() {
     }
 
     suspend fun populateDatabase(personDao: PersonDao) {
+      //Eliminar Tudo
       personDao.deleteAll()
 
-      var person = Person("Gonçalo")
+      //Adicionar pessoas
+      var person = Person("Goncalo1","goncalo1@ipvc.pt",21,2001)
       personDao.insert(person)
-      person = Person("Afonso")
+
+      person = Person("Miguel1", "miguel@ipvc.pt",22,2000)
+      personDao.insert(person)
+
+      person = Person("Beatriz", "beatriz@ipvc.pt",20,2002)
+      personDao.insert(person)
+
+      person = Person("Bolota1", "bolota@ipvc.pt",25,1997)
+      personDao.insert(person)
+
+      person = Person("Teste", "teste@ipvc.pt",20,2001)
+      personDao.insert(person)
+
+      person = Person("Bruno","abc@teste.com",23,1998)
       personDao.insert(person)
     }
   }
@@ -48,7 +63,7 @@ abstract class PersonRoomDatabase: RoomDatabase() {
         val instance = Room.databaseBuilder(
           context.applicationContext,
           PersonRoomDatabase::class.java,
-          "person_database_1"
+          "person_database_2"
         )
           .addCallback(PersonDatabaseCallback(scope))
           .build()
