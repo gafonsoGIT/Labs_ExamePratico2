@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
       val request = ServiceBuilder.buildService(EndPoints::class.java)
-      val call = request.getCountries()
+      val call = request.getCountryByName()
 
       call.enqueue(object : Callback<List<User>> {
         override fun onResponse(call: Call<List<User>>, response: Response<List<User>>) {
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
       })
     }
 
-    fun getSingle(view: View) {
+    /*fun getSingle(view: View) {
       val request = ServiceBuilder.buildService(EndPoints::class.java)
       val call = request.getCountryByName("portugal")
       call.enqueue(object : Callback<User> {
@@ -53,9 +53,9 @@ class MainActivity : AppCompatActivity() {
           Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
         }
       })
-    }
+    }*/
 
-    fun post(view: View) {
+    /*fun post(view: View) {
       val request = ServiceBuilder.buildService(EndPoints::class.java)
       val call = request.postTest("Teste Lat_Retrofit")
       call.enqueue(object: Callback<OutputPost> {
@@ -70,5 +70,5 @@ class MainActivity : AppCompatActivity() {
           Toast.makeText(this@MainActivity, "${t.message}", Toast.LENGTH_SHORT).show()
         }
       })
-    }
+    }*/
 }

@@ -30,8 +30,8 @@ class UsersViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
   private val address: TextView = itemView.findViewById(R.id.address)
 
   fun bind(user: User) {
-    name.setText(user.name.nativeName.por.common)
-    email.setText(user.currencies.EUR.symbol)
-    address.setText(user.capital)
+    name.text = user.capital[0]
+    email.text = user.currencies.EUR.symbol
+    address.text = user.name.nativeName.por.common
   }
 }

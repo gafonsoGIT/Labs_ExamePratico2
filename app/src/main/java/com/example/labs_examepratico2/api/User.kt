@@ -9,10 +9,10 @@ import com.google.android.material.internal.NavigationMenu
   val address: Address
 )*/
 
-data class Address (
+/*data class Address (
   val city: String,
   val zipcode: String
-)
+)*/
 
 data class OutputPost (
   val id: Int,
@@ -22,11 +22,10 @@ data class OutputPost (
 data class User(
   val name: NAME,
   val currencies: CURRENCIES,
-  val capital: String
+  val capital: List<String>
 )
 
 data class NAME (
-  val common: String,
   val nativeName: NATIVENAME
   )
 
