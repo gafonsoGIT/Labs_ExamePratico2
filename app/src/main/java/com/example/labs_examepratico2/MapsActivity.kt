@@ -97,7 +97,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
       }
 
-      /*stopCoordsBtn.setOnClickListener {
+      stopCoordsBtn.setOnClickListener {
         if(coordinates){
           fusedLocationClient.removeLocationUpdates(locationCallback)
           coordinates = !coordinates
@@ -106,7 +106,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
           coordinates = !coordinates
           Toast.makeText(this, ""+lastLocation.latitude.toString() + "-" + lastLocation.longitude.toString(), Toast.LENGTH_LONG).show()
         }
-      }*/
+      }
     }
 
     /**
