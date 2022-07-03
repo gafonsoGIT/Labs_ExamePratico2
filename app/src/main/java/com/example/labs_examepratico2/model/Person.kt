@@ -3,6 +3,7 @@ package com.example.labs_examepratico2.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "person_table")
 class Person (
@@ -15,4 +16,4 @@ class Person (
   val idade: Int,
   @ColumnInfo(name = "anoNascimento")
   val anoNascimento: Int
-  )
+  ) : Serializable {}

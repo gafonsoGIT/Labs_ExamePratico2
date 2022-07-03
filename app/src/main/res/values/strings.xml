@@ -4,4 +4,8 @@
     <string name="add_person">Adicionar pessoa...</string>
     <string name="hint_person">Pessoa...</string>
     <string name="empty_not_saved">A pessoa não foi guardada, pois nada foi inserido.</string>
+  <string name="name">Nome...</string>
+  <string name="age">Idade...</string>
+  <string name="year">Ano de Nascimento...</string>
+  <string name="email">Email...</string>
 </resources>

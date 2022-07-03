@@ -4,12 +4,45 @@
   android:layout_height="match_parent">
 
   <EditText
-    android:id="@+id/edit_person"
+    android:id="@+id/etNome"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="48dp"
     android:fontFamily="sans-serif-light"
-    android:hint="@string/hint_person"
+    android:hint="@string/name"
+    android:inputType="textAutoComplete"
+    android:layout_margin="16dp"
+    android:textSize="18sp" />
+
+  <EditText
+    android:id="@+id/etEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:fontFamily="sans-serif-light"
+    android:hint="@string/email"
+    android:inputType="textAutoComplete"
+    android:layout_margin="16dp"
+    android:textSize="18sp" />
+
+  <EditText
+    android:id="@+id/etIdade"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:fontFamily="sans-serif-light"
+    android:hint="@string/age"
+    android:inputType="textAutoComplete"
+    android:layout_margin="16dp"
+    android:textSize="18sp" />
+
+  <EditText
+    android:id="@+id/etAno"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="48dp"
+    android:fontFamily="sans-serif-light"
+    android:hint="@string/year"
     android:inputType="textAutoComplete"
     android:layout_margin="16dp"
     android:textSize="18sp" />

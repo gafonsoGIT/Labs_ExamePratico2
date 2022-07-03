@@ -54,18 +54,22 @@ class MainActivity : AppCompatActivity() {
       personViewModel.deletePlus20()
     }
 
-    /*val fab = findViewById<FloatingActionButton>(R.id.fab)
+    val fab = findViewById<FloatingActionButton>(R.id.fab)
     fab.setOnClickListener {
       val intent = Intent(this@MainActivity, NewPersonActivity::class.java)
       startActivityForResult(intent, newPersonActivityRequestCode)
-    } */
+    }
   }
 
   override fun onActivityResult(requestCode: Int, resultCode: Int, intentData: Intent?) {
     super.onActivityResult(requestCode, resultCode, intentData)
 
     if (requestCode == newPersonActivityRequestCode && resultCode == Activity.RESULT_OK) {
-      intentData?.getStringExtra(NewPersonActivity.EXTRA_REPLY)?.let {
+      intentData?.getSerializableExtra(NewPersonActivity.EXTRA_REPLY)?.let { reply ->
+
+        val person = reply as Person
+
+        personViewModel.insert(person)
       }
     }
     else {

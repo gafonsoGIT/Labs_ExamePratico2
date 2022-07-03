@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Labs_ExamePratico2</string>
+  <string name="name">Name...</string>
+  <string name="age">Age...</string>
+  <string name="year">Birthday year...</string>
+  <string name="email">Email...</string>
+  <string name="button_save">Save...</string>
+  <string name="add_person">Add person...</string>
+  <string name="hint_person">Person...</string>
+  <string name="empty_not_saved">Person not save, because nothing was inserted</string>
+</resources>
