@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
@@ -43,7 +44,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private var continenteLat: Double = 0.0
     private var continenteLong: Double = 0.0
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    private var coordinates: Boolean = false
+
+  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMapsBinding.inflate(layoutInflater)
@@ -56,6 +59,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
+        val stopCoordsBtn = findViewById<Button>(R.id.stopCoordsBtn)
 
         createLocationRequest()
 
@@ -70,11 +75,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             continenteLat, continenteLong)
 
           if(distance < 5000){
-            Toast.makeText(applicationContext, distance.toString() + " metros", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, distance.toString() + " metros", Toast.LENGTH_SHORT).show()
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15.0f))
             mMap.addMarker(MarkerOptions().position(loc).title("new Location"))
           }else {
-            Toast.makeText(applicationContext, "Acima da distância referida", Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, "Acima da distância referida", Toast.LENGTH_SHORT).show()
           }
           findViewById<TextView>(R.id.txtcoordenadas).setText("Lat: " + loc.latitude + " - Long: " + loc.longitude)
           Log.d("lab google maps", "new location received" + loc.latitude + " - " + loc.longitude)
@@ -91,6 +96,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         }
       }
+
+      /*stopCoordsBtn.setOnClickListener {
+        if(coordinates){
+          fusedLocationClient.removeLocationUpdates(locationCallback)
+          coordinates = !coordinates
+        } else if(!coordinates) {
+          startLocationUpdates()
+          coordinates = !coordinates
+          Toast.makeText(this, ""+lastLocation.latitude.toString() + "-" + lastLocation.longitude.toString(), Toast.LENGTH_LONG).show()
+        }
+      }*/
     }
 
     /**
